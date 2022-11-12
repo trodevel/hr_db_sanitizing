@@ -9,12 +9,12 @@ OUTP=$2
 #sed 's/По настоящее время\s\+([0-9а-я ]*)/now/g' $INP > ${OUTP}.1
 #sed 's/\(\(Январь\|Февраль\|Март\|Апрель\|Май\|Июнь\|Июль\|Август\|Сентябрь\|Октябрь\|Ноябрь\|Декабрь\) [0-9]\+\)\s\+([0-9а-я ]*)/\1/g' ${OUTP}.1 > ${OUTP}.2
 #sed 's/\(\(Январь\|Февраль\|Март\|Апрель\|Май\|Июнь\|Июль\|Август\|Сентябрь\|Октябрь\|Ноябрь\|Декабрь\) [0-9]\+\) — /\1","/g' ${OUTP}.2 > ${OUTP}.3
-echo "."; sed 's/&#8203;[0-9\.]*&#8203;//g' ${OUTP}.3 > ${OUTP}.4
-echo "."; sed 's/\&amp;/\&/g' ${OUTP}.4 > ${OUTP}.5
-echo "."; sed 's/\&amp;/\&/g' ${OUTP}.5 > ${OUTP}.6
-echo "."; sed 's/\&amp;/\&/g' ${OUTP}.6 > ${OUTP}.7
-echo "."; sed 's/\&quot;/""/g' ${OUTP}.7 > ${OUTP}.8
-echo "."; cp ${OUTP}.8 ${OUTP}.9
+#echo "."; sed 's/&#8203;[0-9\.]*&#8203;//g' ${OUTP}.3 > ${OUTP}.4
+#echo "."; sed 's/\&amp;/\&/g' ${OUTP}.4 > ${OUTP}.5
+#echo "."; sed 's/\&amp;/\&/g' ${OUTP}.5 > ${OUTP}.6
+#echo "."; sed 's/\&amp;/\&/g' ${OUTP}.6 > ${OUTP}.7
+#echo "."; sed 's/\&quot;/""/g' ${OUTP}.7 > ${OUTP}.8
+#echo "."; cp ${OUTP}.8 ${OUTP}.9
 
 declare -A MYMAP
 MYMAP[Январь]="01"
