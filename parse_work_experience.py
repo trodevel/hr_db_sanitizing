@@ -6,7 +6,7 @@ def quotify( s ):
     return '"' + s.replace( '"', '""' ) + '"'
 
 def sanitize_phone( s ):
-    return s.replace( ' ', '' ).replace( '-', '' )
+    return quotify( s.replace( ' ', '' ).replace( '-', '' ) )
 
 def remove_empty_lines( v ):
 
@@ -128,6 +128,6 @@ for row in reader:
             total_num_broken += 1
 
     if num_res > 0:
-        print( "{0},{1},{2},{3},{4},{5}{6}".format( row[0], sanitize_phone( row[1] ), row[2], row[3], row[4], num_res, res ) )
+        print( "{0},{1},{2},{3},{4},{5}{6}".format( row[0], sanitize_phone( row[1] ), quotify( row[2] ), quotify( row[3] ), quotify( row[4] ), num_res, res ) )
 
 print( "INFO: number of records: valid {0}, broken {1}".format( total_num_valid, total_num_broken ), file=sys.stderr )
