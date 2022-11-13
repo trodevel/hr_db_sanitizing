@@ -10,7 +10,7 @@ db_filename = "db.csv"          # prod
 reader = csv.reader(open( db_filename, "r"))
 for row in reader:
     print ( "{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}".format( row[0].replace( "https://career.habr.com/", "" ),
-        sanitize( row[14] ).replace( ' ', '' ),
+        sanitize( row[14] ),
         sanitize( row[16] ),
         sanitize( row[17] ),
         sanitize( row[19] ),
