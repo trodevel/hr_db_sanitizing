@@ -39,6 +39,8 @@ done
 
 echo "."; sed 's/\( - \)*От [0-9]\+ до [0-9]\+ сотрудников//g' ${OUTP}.9 > ${OUTP}.10
 echo "."; sed 's/\( - \)*Более [0-9]\+ сотрудников//g' ${OUTP}.10 > ${OUTP}.11
+echo "."; sed 's~@https://t.me/@g~@~g' ${OUTP}.11 > ${OUTP}.12
+echo "."; sed 's~@https://t.me/g~@~g' ${OUTP}.12 > ${OUTP}.13
 
-mv ${OUTP}.11 ${OUTP}
+mv ${OUTP}.13 ${OUTP}
 rm ${OUTP}.*
