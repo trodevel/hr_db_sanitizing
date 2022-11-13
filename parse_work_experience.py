@@ -5,6 +5,9 @@ import sys
 def quotify( s ):
     return '"' + s.replace( '"', '""' ) + '"'
 
+def sanitize_phone( s ):
+    return s.replace( ' ', '' ).replace( '-', '' )
+
 def remove_empty_lines( v ):
 
     res = []
