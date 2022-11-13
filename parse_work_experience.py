@@ -101,7 +101,7 @@ def extract( s, line_nr, row_nr ):
 
 
 db_filename = "db_10_relev.csv"       # test
-db_filename = "db_relev_no_empty.csv" # prod
+#db_filename = "db_relev_no_empty.csv" # prod
 
 reader = csv.reader(open( db_filename, "r"))
 
@@ -118,7 +118,7 @@ for row in reader:
 
     num_res = 0
 
-    for i in range( 1, 6 ):
+    for i in range( 5, 10 ):
         is_company, r = extract( row[i], line_nr, i )
         if is_company:
             res += f",{r}"
@@ -128,6 +128,6 @@ for row in reader:
             total_num_broken += 1
 
     if num_res > 0:
-        print( "{0},{1}{2}".format( row[0], num_res, res ) )
+        print( "{0},{1},{2},{3},{4},{5}{6}".format( row[0], sanitize_phone( row[1] ), row[2], row[3], row[4], num_res, res ) )
 
 print( "INFO: number of records: valid {0}, broken {1}".format( total_num_valid, total_num_broken ), file=sys.stderr )
