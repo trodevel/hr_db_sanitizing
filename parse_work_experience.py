@@ -109,6 +109,7 @@ line_nr = 0
 
 total_num_broken = 0
 total_num_valid = 0
+total_outp_lines = 0
 
 for row in reader:
 
@@ -128,6 +129,7 @@ for row in reader:
             total_num_broken += 1
 
     if num_res > 0:
+        total_outp_lines += 1
         print( "{0},{1},{2},{3},{4},{5}{6}".format( row[0], sanitize_phone( row[1] ), quotify( row[2] ), quotify( row[3] ), quotify( row[4] ), num_res, res ) )
 
-print( "INFO: number of records: valid {0}, broken {1}".format( total_num_valid, total_num_broken ), file=sys.stderr )
+print( "INFO: read lines {0}, wrote lines {1}, number of records: valid {0}, broken {1}".format( line_nr, total_outp_lines, total_num_valid, total_num_broken ), file=sys.stderr )
