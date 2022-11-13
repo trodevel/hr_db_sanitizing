@@ -34,7 +34,7 @@ for s in "${!MYMAP[@]}"
 do
     echo "step $s"
     val=${MYMAP[$s]}
-    sed -i "s/\(${s}\) \([0-9]\+\)/${val}-\2/g" ${OUTP}.9
+    sed -i "s/\(${s}\) \([0-9]\+\)/\2-${val}/g" ${OUTP}.9
 done
 
 echo "."; sed 's/\( - \)*От [0-9]\+ до [0-9]\+ сотрудников//g' ${OUTP}.9 > ${OUTP}.10
