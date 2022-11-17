@@ -128,8 +128,13 @@ for row in reader:
         else:
             total_num_broken += 1
 
+    phone    = sanitize_phone( row[1] )
+    skype    = quotify( row[2] )
+    telegram = quotify( row[3] )
+    email    = quotify( row[4] )
+
     if num_res > 0:
         total_outp_lines += 1
-        print( "{0},{1},{2},{3},{4},{5}{6}".format( row[0], sanitize_phone( row[1] ), quotify( row[2] ), quotify( row[3] ), quotify( row[4] ), num_res, res ) )
+        print( "{0},{1},{2},{3},{4},{5}{6}".format( row[0], phone, skype, telegram, email, num_res, res ) )
 
 print( "INFO: read lines {0}, wrote lines {1}, number of records: valid {0}, broken {1}".format( line_nr, total_outp_lines, total_num_valid, total_num_broken ), file=sys.stderr )
