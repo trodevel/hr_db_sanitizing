@@ -27,8 +27,8 @@ def is_valid_id( s ):
         return True
     return False
 
-#db_filename = "samples/db_relev.csv"       # test
-db_filename = "db_relev.csv"          # prod
+db_filename = "samples/db_relev.csv"       # test
+#db_filename = "db_relev.csv"          # prod
 
 reader = csv.reader(open( db_filename, "r"))
 
@@ -48,10 +48,10 @@ for row in reader:
         skype,
         telegram,
         email,
-        sanitize( row[5] ),
-        sanitize( row[6] ),
-        sanitize( row[7] ),
-        sanitize( row[8] ),
-        sanitize( row[9] ),
-        sanitize( row[10] )
+        sanitize_nl( row[5] ),
+        sanitize_nl( row[6] ),
+        sanitize_nl( row[7] ),
+        sanitize_nl( row[8] ),
+        sanitize_nl( row[9] ),
+        sanitize_nl( row[10] )
         ) )
