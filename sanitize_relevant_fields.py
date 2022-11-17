@@ -28,8 +28,8 @@ def is_valid_id( s ):
         return True
     return False
 
-db_filename = "samples/db_relev.csv"       # test
-#db_filename = "db_relev.csv"          # prod
+#db_filename = "samples/db_relev.csv"       # test
+db_filename = "db_relev.csv"          # prod
 
 num_read = 0
 num_invalid_ids = 0
