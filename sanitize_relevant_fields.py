@@ -57,14 +57,14 @@ for row in reader:
 
     print ( "{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}".format(
         idd,
-        phone,
-        skype,
-        telegram,
-        email,
-        w1,
-        w2,
-        w3,
-        w4,
-        w5,
-        w6
+        quotify( phone ),
+        quotify( skype ),
+        quotify( telegram ),
+        quotify( email ),
+        quotify( w1 ),
+        quotify( w2 ),
+        quotify( w3 ),
+        quotify( w4 ),
+        quotify( w5 ),
+        quotify( w6 )
         ) )
