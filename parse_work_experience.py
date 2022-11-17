@@ -107,6 +107,7 @@ line_nr = 0
 total_num_broken = 0
 total_num_valid = 0
 total_outp_lines = 0
+total_num_w_contacts = 0
 
 for row in reader:
 
@@ -125,13 +126,19 @@ for row in reader:
         else:
             total_num_broken += 1
 
-    phone    = quotify( row[1] )
-    skype    = quotify( row[2] )
-    telegram = quotify( row[3] )
-    email    = quotify( row[4] )
+    phone    = row[1]
+    skype    = row[2]
+    telegram = row[3]
+    email    = row[4]
 
-    if num_res > 0:
+    has_contacts = False
+
+    if phone or skype or telegram or email:
+        has_contacts = True
+        total_num_w_contacts += 1
+
+    if num_res > 0 or has_contacts:
         total_outp_lines += 1
         print( "{0},{1},{2},{3},{4},{5}{6}".format( row[0], phone, skype, telegram, email, num_res, res ) )
 
-print( "INFO: read lines {0}, wrote lines {1}, number of records: valid {0}, broken {1}".format( line_nr, total_outp_lines, total_num_valid, total_num_broken ), file=sys.stderr )
+print( "INFO: read lines {0}, wrote lines {1}, number of records: valid {0}, with contacts {1}, broken {1}".format( line_nr, total_outp_lines, total_num_valid, total_num_w_contacts, total_num_broken ), file=sys.stderr )
