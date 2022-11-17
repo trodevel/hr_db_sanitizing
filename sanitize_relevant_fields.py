@@ -44,7 +44,7 @@ for row in reader:
 
     idd   = sanitize_id( row[0] )
     if is_valid_id( idd ) == False:
-        print( f"DEBUG: ignoring broken: {idd}", file=sys.stderr )
+        #print( f"DEBUG: ignoring broken: {idd}", file=sys.stderr )
         num_invalid_ids += 1
         continue
 
