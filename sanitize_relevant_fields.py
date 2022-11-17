@@ -34,13 +34,20 @@ reader = csv.reader(open( db_filename, "r"))
 
 for row in reader:
     idd   = sanitize_id( row[0] )
+    if is_valid_id( idd ) == False:
+        continue
+
     phone = sanitize_phone( row[1] )
     skype = sanitize_skype( row[2] )
     telegram = sanitize_telegram( row[3] )
     email    = sanitize_email( row[4] )
 
-    if is_valid_id( idd ) == False:
-        continue
+    w1 = sanitize_nl( row[5] )
+    w2 = sanitize_nl( row[6] )
+    w3 = sanitize_nl( row[7] )
+    w4 = sanitize_nl( row[8] )
+    w5 = sanitize_nl( row[9] )
+    w6 = sanitize_nl( row[10] )
 
     print ( "{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}".format(
         idd,
@@ -48,10 +55,10 @@ for row in reader:
         skype,
         telegram,
         email,
-        sanitize_nl( row[5] ),
-        sanitize_nl( row[6] ),
-        sanitize_nl( row[7] ),
-        sanitize_nl( row[8] ),
-        sanitize_nl( row[9] ),
-        sanitize_nl( row[10] )
+        w1,
+        w2,
+        w3,
+        w4,
+        w5,
+        w6
         ) )
