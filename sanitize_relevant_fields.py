@@ -31,12 +31,21 @@ def is_valid_id( s ):
 db_filename = "samples/db_relev.csv"       # test
 #db_filename = "db_relev.csv"          # prod
 
+num_read = 0
+num_invalid_ids = 0
+num_empty_lines = 0
+num_outp = 0
+
 reader = csv.reader(open( db_filename, "r"))
 
 for row in reader:
+
+    num_read += 1
+
     idd   = sanitize_id( row[0] )
     if is_valid_id( idd ) == False:
         print( f"DEBUG: ignoring broken: {idd}", file=sys.stderr )
+        num_invalid_ids += 1
         continue
 
     phone = sanitize_phone( row[1] )
@@ -53,6 +62,7 @@ for row in reader:
 
     if not ( phone or skype or telegram or email or w1 or w2 or w3 or w4 or w5 or w6 ):
         print( f"DEBUG: ignoring empty: {idd}", file=sys.stderr )
+        num_empty_lines += 1
         continue
 
     print ( "{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}".format(
@@ -68,3 +78,7 @@ for row in reader:
         quotify( w5 ),
         quotify( w6 )
         ) )
+
+    num_outp += 1
+
+print( f"INFO: read {num_read}, wrote {num_outp}, invalid ids {num_invalid_ids}, empty lines {num_empty_lines}", file=sys.stderr )
