@@ -27,7 +27,7 @@ def is_valid_id( s ):
         return True
     return False
 
-#db_filename = "db_10_relev.csv"       # test
+#db_filename = "samples/db_relev.csv"       # test
 db_filename = "db_relev.csv"          # prod
 
 reader = csv.reader(open( db_filename, "r"))
