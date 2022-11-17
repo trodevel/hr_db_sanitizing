@@ -17,7 +17,7 @@ def sanitize_skype( s ):
     return quotify( s.replace( ' ', '' ).replace( 'live:', '' ) )
 
 def sanitize_telegram( s ):
-    return quotify( s.replace( ' ', '' ).replace( '-', '' ) )
+    return quotify( s.replace( ' ', '' ).replace( 'https://t.me/', '' ).replace( '@', '' ) )
 
 def sanitize_email( s ):
     return quotify( s.replace( ' ', '' ) )
