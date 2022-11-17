@@ -27,12 +27,18 @@ db_filename = "db_relev.csv"          # prod
 reader = csv.reader(open( db_filename, "r"))
 
 for row in reader:
+    idd   = sanitize_id( row[0] )
+    phone = sanitize_phone( row[1] )
+    skype = sanitize_skype( row[2] )
+    telegram = sanitize_telegram( row[3] )
+    email    = sanitize_email( row[4] )
+
     print ( "{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}".format(
-        sanitize_id( row[0] ),
-        sanitize_phone( row[1] ),
-        sanitize_skype( row[2] ),
-        sanitize_telegram( row[3] ),
-        sanitize_email( row[4] ),
+        idd,
+        phone,
+        skype,
+        telegram,
+        email,
         sanitize( row[5] ),
         sanitize( row[6] ),
         sanitize( row[7] ),
