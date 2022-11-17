@@ -1,4 +1,5 @@
 import csv
+import re
 
 def quotify( s ):
     return '"' + s.replace( '"', '""' ) + '"'
@@ -21,6 +22,11 @@ def sanitize_telegram( s ):
 def sanitize_email( s ):
     return quotify( s.replace( ' ', '' ) )
 
+def is_valid_id( s ):
+    if re.match( "[A-Za-z0-9_-]", s ):
+        return True
+    return False
+
 #db_filename = "db_10_relev.csv"       # test
 db_filename = "db_relev.csv"          # prod
 
@@ -32,6 +38,9 @@ for row in reader:
     skype = sanitize_skype( row[2] )
     telegram = sanitize_telegram( row[3] )
     email    = sanitize_email( row[4] )
+
+    if is_valid_id( idd ) == False:
+        continue
 
     print ( "{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}".format(
         idd,
