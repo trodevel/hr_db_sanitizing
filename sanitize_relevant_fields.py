@@ -13,7 +13,7 @@ def sanitize_phone( s ):
     return quotify( s.replace( ' ', '' ).replace( '-', '' ) )
 
 def sanitize_skype( s ):
-    return quotify( s.replace( ' ', '' ).replace( '-', '' ) )
+    return quotify( s.replace( ' ', '' ) )
 
 def sanitize_telegram( s ):
     return quotify( s.replace( ' ', '' ).replace( '-', '' ) )
