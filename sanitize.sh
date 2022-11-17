@@ -3,8 +3,10 @@
 INP=$1
 OUTP=$2
 
-[[ -z $INP ]] && exit 1
-[[ -z $OUTP ]] && exit 1
+[[ -z $INP ]]  && echo "ERROR: input file is not given" && exit 1
+[[ -z $OUTP ]] && echo "ERROR: output file is not given" && exit 1
+
+[[ ! -f $INP ]] && echo "ERROR: file $INP not found" && exit 1
 
 echo "."; sed 's/По настоящее время\s\+([0-9а-я ]*)/now/g' $INP > ${OUTP}.1
 echo "."; sed 's/\(\(Январь\|Февраль\|Март\|Апрель\|Май\|Июнь\|Июль\|Август\|Сентябрь\|Октябрь\|Ноябрь\|Декабрь\) [0-9]\+\)\s\+([0-9а-я ]*)/\1/g' ${OUTP}.1 > ${OUTP}.2
