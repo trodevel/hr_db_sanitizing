@@ -5,9 +5,6 @@ import sys
 def quotify( s ):
     return '"' + s.replace( '"', '""' ) + '"'
 
-def sanitize_phone( s ):
-    return quotify( s.replace( ' ', '' ).replace( '-', '' ) )
-
 def remove_empty_lines( v ):
 
     res = []
@@ -128,7 +125,7 @@ for row in reader:
         else:
             total_num_broken += 1
 
-    phone    = sanitize_phone( row[1] )
+    phone    = quotify( row[1] )
     skype    = quotify( row[2] )
     telegram = quotify( row[3] )
     email    = quotify( row[4] )
