@@ -143,7 +143,7 @@ for row in reader:
 
     if num_res > 0 or has_contacts:
         total_outp_lines += 1
-        print( "{0},{1},{2},{3},{4},{5}{6}".format( row[0], phone, skype, telegram, email, num_res, res ) )
+        print( "{0},{1},{2},{3},{4},{5}{6}".format( row[0], quotify( phone ), quotify( skype ), quotify( telegram ), quotify( email ), num_res, res ) )
 
 print( "INFO: read lines {0}, wrote lines {1} (with contacts {2}, with experience {3}), number of experience records: valid {4}, broken {5}".
         format( line_nr, total_outp_lines, total_num_w_contacts, total_num_w_experience, total_num_valid, total_num_broken ),
