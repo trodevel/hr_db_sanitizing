@@ -44,7 +44,7 @@ for row in reader:
 
     idd   = sanitize_id( row[0] )
     if is_valid_id( idd ) == False:
-        #print( f"DEBUG: ignoring broken: {idd}", file=sys.stderr )
+        print( f"DEBUG: ignoring broken: {idd}", file=sys.stderr )
         num_invalid_ids += 1
         continue
 
@@ -61,7 +61,7 @@ for row in reader:
     w6 = sanitize_nl( row[10] )
 
     if not ( phone or skype or telegram or email or w1 or w2 or w3 or w4 or w5 or w6 ):
-        print( f"DEBUG: ignoring empty: {idd}", file=sys.stderr )
+        #print( f"DEBUG: ignoring empty: {idd}", file=sys.stderr )
         num_empty_lines += 1
         continue
 
