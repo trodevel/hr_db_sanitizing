@@ -5,22 +5,22 @@ def quotify( s ):
     return '"' + s.replace( '"', '""' ) + '"'
 
 def sanitize_nl( s ):
-    return quotify( s.replace( "\n", "<NL>" ) )
+    return s.replace( "\n", "<NL>" )
 
 def sanitize_id( s ):
     return s.replace( "https://career.habr.com/", "" )
 
 def sanitize_phone( s ):
-    return quotify( s.replace( ' ', '' ).replace( '-', '' ) )
+    return s.replace( ' ', '' ).replace( '-', '' )
 
 def sanitize_skype( s ):
-    return quotify( s.replace( ' ', '' ).replace( 'live:', '' ) )
+    return s.replace( ' ', '' ).replace( 'live:', '' )
 
 def sanitize_telegram( s ):
-    return quotify( s.replace( ' ', '' ).replace( 'https://t.me/', '' ).replace( '@', '' ) )
+    return s.replace( ' ', '' ).replace( 'https://t.me/', '' ).replace( '@', '' )
 
 def sanitize_email( s ):
-    return quotify( s.replace( ' ', '' ) )
+    return s.replace( ' ', '' )
 
 def is_valid_id( s ):
     if re.match( "[A-Za-z0-9_-]", s ):
