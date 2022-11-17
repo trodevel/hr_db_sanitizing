@@ -19,7 +19,7 @@ def sanitize_telegram( s ):
     return quotify( s.replace( ' ', '' ).replace( '-', '' ) )
 
 def sanitize_email( s ):
-    return quotify( s.replace( ' ', '' ).replace( '-', '' ) )
+    return quotify( s.replace( ' ', '' ) )
 
 #db_filename = "db_10_relev.csv"       # test
 db_filename = "db_relev.csv"          # prod
