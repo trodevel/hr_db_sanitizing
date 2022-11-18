@@ -55,29 +55,36 @@ def extract( s, line_nr, row_nr ):
     position = ""
     duration = ""
 
+    print( f"DEBUG: line {s}", file=sys.stderr )
+
     duration = res[ duration_idx ]
 
     if duration_idx >= 5 and duration_idx <= 10:
+        print( "DEBUG: A", file=sys.stderr )
         company  = res[ 0 ]
         location = res[ duration_idx - 2 ]
         position = res[ duration_idx - 1 ]
 
     elif duration_idx == 4:
+        print( "DEBUG: B", file=sys.stderr )
         company  = res[ 0 ]
         tagline  = res[ 1 ]
         location = res[ 2 ]
         position = res[ 3 ]
 
     elif duration_idx == 3:
+        print( "DEBUG: C", file=sys.stderr )
         company  = res[ 0 ]
         location = res[ 1 ]
         position = res[ 2 ]
 
     elif duration_idx == 2:
+        print( "DEBUG: D", file=sys.stderr )
         company  = res[ 0 ]
         position = res[ 2 ]
 
     elif duration_idx == 1:
+        print( "DEBUG: E", file=sys.stderr )
         company  = res[ 0 ]
 
     else:
