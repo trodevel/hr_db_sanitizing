@@ -97,7 +97,7 @@ def extract( s, line_nr, row_nr ):
     return [ 1, f'{company},{tagline},{location},{position},{duration}' ]
 
 
-#db_filename = "db_10_relev.csv"       # test
+#db_filename = "samples/db_relev_no_empty.csv"       # test
 db_filename = "db_relev_no_empty.csv" # prod
 
 reader = csv.reader(open( db_filename, "r"))
