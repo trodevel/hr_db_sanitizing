@@ -81,7 +81,7 @@ def extract( s, line_nr, row_nr ):
     elif duration_idx == 2:
         print( "DEBUG: D", file=sys.stderr )
         company  = res[ 0 ]
-        position = res[ 2 ]
+        position = res[ 1 ]
 
     elif duration_idx == 1:
         print( "DEBUG: E", file=sys.stderr )
