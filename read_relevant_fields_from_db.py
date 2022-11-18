@@ -4,7 +4,7 @@ def sanitize( s ):
     res = s.replace( "\n", "<NL>" ).replace( '"', '""' )
     return '"' + res + '"'
 
-#db_filename = "db_10.csv"       # test
+#db_filename = "samples/db.csv"       # test
 db_filename = "db.csv"          # prod
 
 reader = csv.reader(open( db_filename, "r"))
